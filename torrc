@@ -6,7 +6,12 @@ Log notice file C:\tor-win32-0.2.9.10\log\tor\notices.log
 ORPort 9001 
 Nickname rororelay
 
-AccountingMax 1000 GBytes 
-AccountingStart month 12 00:00 
+RelayBandwidthRate 350 KBytes
+RelayBandwidthBurst 425 KBytes
+
+#AccountingMax 1000 GBytes
+#AccountingStart month 12 00:00
+
+DirPort 9030
 
 ExitPolicy reject *:* # no exits allowed
