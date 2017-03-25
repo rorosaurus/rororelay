@@ -3,15 +3,17 @@ SOCKSPort 0
 DataDirectory C:\tor-win32-0.2.9.10\Data\Tor
 Log notice file C:\tor-win32-0.2.9.10\log\tor\notices.log 
 
-ORPort 9001 
+ORPort 9001
+
 Nickname rororelay
 
+MaxMemInQueues 500 MBytes
+
 RelayBandwidthRate 350 KBytes
-RelayBandwidthBurst 425 KBytes
+RelayBandwidthBurst 450 KBytes
 
-#AccountingMax 1000 GBytes
-#AccountingStart month 12 00:00
-
-DirPort 9030
+AccountingRule out # we only pay for data leaving Azure
+AccountingMax 1000 GBytes
+AccountingStart month 12 00:00
 
 ExitPolicy reject *:* # no exits allowed
