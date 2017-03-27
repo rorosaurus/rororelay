@@ -5,15 +5,19 @@ Log notice file C:\tor-win32-0.2.9.10\log\tor\notices.log
 
 ORPort 9001
 
+# Directory mirroring is not the most efficent use of bandwidth, so disable this feature
+DirPort 0
+
 Nickname rororelay
+
+# I recommend you actually specify a DNS or IP here, since it seems to cache this value somewhere
+# and Azure gives you a new public IP if your VM restarts
+Address rory-server.cloudapp.net
 
 MaxMemInQueues 500 MBytes
 
-RelayBandwidthRate 350 KBytes
-RelayBandwidthBurst 450 KBytes
-
-AccountingRule out # we only pay for data leaving Azure
+AccountingRule out # we only pay for data leaving Azure, so only track that
 AccountingMax 1000 GBytes
-AccountingStart month 12 00:00
+AccountingStart month 12 00:00 # my billing cycle resets on the 12th of each month
 
 ExitPolicy reject *:* # no exits allowed
