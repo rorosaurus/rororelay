@@ -5,7 +5,7 @@ Log notice file C:\tor-win32-0.2.9.10\log\tor\notices.log
 
 ORPort 9001
 
-# Directory mirroring is not the most efficent use of bandwidth, so disable this feature
+# Directory mirroring is not the most efficient use of bandwidth, so disable this feature
 DirPort 0
 
 Nickname rororelay
@@ -17,7 +17,7 @@ Address rory-server.cloudapp.net
 MaxMemInQueues 500 MBytes
 
 AccountingRule out # we only pay for data leaving Azure, so only track that
-AccountingMax 1000 GBytes
+AccountingMax 2500 GBytes
 AccountingStart month 12 00:00 # my billing cycle resets on the 12th of each month
 
 ExitPolicy reject *:* # no exits allowed
